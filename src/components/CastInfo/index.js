@@ -1,1 +1,1 @@
-export { default } from './CastInfo.jsx';
+export { default } from './CastInfo.tsx';

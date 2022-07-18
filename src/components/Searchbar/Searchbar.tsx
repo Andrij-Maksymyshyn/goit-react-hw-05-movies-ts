@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Box, Form, Input, Button } from './Searchbar.styled';
 
 
-function Searchbar({propSubmit}) {
-const [inputFilmValue, setInputFilmValue] = useState('');
+interface IProps {
+  propSubmit: (inputFilmValue: string) => void,
+};
 
-    const handleChange = e => {
+
+function Searchbar ({propSubmit}: IProps) {
+const [inputFilmValue, setInputFilmValue] = useState<string>('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
 
     setInputFilmValue(value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (inputFilmValue.trim() === '') {
@@ -47,6 +51,3 @@ const [inputFilmValue, setInputFilmValue] = useState('');
 
 export default Searchbar;
 
-Searchbar.propTypes = {
-  propSubmit: PropTypes.func.isRequired,
-};

@@ -12,11 +12,11 @@ import { noPosterImg } from './HomePage';
 
 export function MovieDetailsPage() {
     const { moviesId } = useParams();
-    const [movie, setMovie] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [movie, setMovie] = useState<{ [key: string]: string | any, } | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
     const location = useLocation();
-    const grandPath = useRef(location);
-    console.log(grandPath);
+    const grandPath = useRef<{ [key: string]: string | any, }>(location);
+    // console.log(grandPath);
 
     
     useEffect(() => {
@@ -35,7 +35,7 @@ export function MovieDetailsPage() {
                 vote_average,
                 genresValues: (genres.length === 0) ?
                     "There are no genres" :
-                    (genres.map(({ name }) => (
+                    (genres.map(({ name }: {name: string}) => (
                         [name]
                     )).join(", "))
             });

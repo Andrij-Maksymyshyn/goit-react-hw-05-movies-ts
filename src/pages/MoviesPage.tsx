@@ -11,15 +11,15 @@ import { UlMovies, LinkMovies, LiMovies, ImgMovies, PMovies } from './MoviesPage
 
 export function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [movies, setMovies] = useState([]);
-  const [errorM, setErrorM] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [movies, setMovies] = useState<{ [key: string]: string }[]>([]);
+  const [errorM, setErrorM] = useState<any | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   const searchFilmValue = searchParams.get('value');
   const location = useLocation();
 
   
 
-     const addSearchValue = formData => {
+     const addSearchValue = (formData: string) => {
      setSearchParams({value: formData})   
   };
 

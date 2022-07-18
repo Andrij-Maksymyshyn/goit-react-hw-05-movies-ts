@@ -7,9 +7,9 @@ import { toast } from 'react-hot-toast';
 
 
 function Reviews() {
-    const [reviewsInfo, setReviewsInfo] = useState([]);
+    const [reviewsInfo, setReviewsInfo] = useState<{ [key: string]: string }[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
     const { moviesId } = useParams();
-    const [loading, setLoading] = useState(false);
     
 
 

@@ -10,9 +10,9 @@ export const noPosterImg = 'https://sd.keepcalms.com/i/sorry-no-picture-availabl
 
 
 export function HomePage() {
-    const [movies, setMovies] = useState([]);
-    const [errorM, setErrorM] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [movies, setMovies] = useState<{ [key: string]: string }[]>([]);
+    const [errorM, setErrorM] = useState<any | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
     const location = useLocation();
     
 

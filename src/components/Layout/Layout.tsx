@@ -10,7 +10,7 @@ export default function Layout() {
                 <LinkStyled to="/">Home</LinkStyled>
                 <LinkStyled to="/movies">Movies</LinkStyled>
             </Nav>
-            </Header>
+        </Header>
         <Outlet/>           
             </>
     )

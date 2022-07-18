@@ -9,9 +9,9 @@ const noPosterImg = 'https://sd.keepcalms.com/i/sorry-no-picture-available-2.png
 
 
 function Cast() {
-    const [castInfo, setCastInfo] = useState([]);
+    const [castInfo, setCastInfo] = useState<{ [key: string]: string }[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
     const { moviesId } = useParams();
-    const [loading, setLoading] = useState(false);
     
    
 
